@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BudgetBuddy | Safe Budget Planner</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>BudgetBuddy</h1>
+        <p>Plan a safe budget today for a more secure future.</p>
+      </header>
+
+      <section class="card">
+        <h2>Monthly Budget Inputs</h2>
+        <form id="budget-form">
+          <label>
+            Monthly Income ($)
+            <input type="number" id="income" min="0" step="0.01" required />
+          </label>
+
+          <label>
+            Fixed Expenses ($)
+            <input type="number" id="fixed" min="0" step="0.01" required />
+          </label>
+
+          <label>
+            Variable Expenses ($)
+            <input type="number" id="variable" min="0" step="0.01" required />
+          </label>
+
+          <label>
+            Existing Savings ($)
+            <input type="number" id="savings" min="0" step="0.01" required />
+          </label>
+
+          <label>
+            Emergency Fund Goal (months)
+            <input type="number" id="emergencyMonths" min="1" max="12" step="1" value="6" required />
+          </label>
+
+          <button type="submit">Generate Safe Plan</button>
+        </form>
+      </section>
+
+      <section id="result" class="card hidden" aria-live="polite">
+        <h2>Your Safety Budget Plan</h2>
+        <div class="grid">
+          <div>
+            <h3>Monthly Leftover</h3>
+            <p id="leftover"></p>
+          </div>
+          <div>
+            <h3>Recommended Split</h3>
+            <p id="split"></p>
+          </div>
+          <div>
+            <h3>Emergency Target</h3>
+            <p id="target"></p>
+          </div>
+          <div>
+            <h3>Time to Reach Target</h3>
+            <p id="timeline"></p>
+          </div>
+        </div>
+        <p id="status" class="status"></p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
